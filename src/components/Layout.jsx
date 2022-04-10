@@ -75,7 +75,7 @@ export const Layout = ({ children }) => {
 					<NavLinkList src={settingsIcn} title="Settings" href />
 					{/* </div> */}
 				</div>
-				<div>
+				<div className="border-b border-write-text1-fade">
 					<Link to className="group flex items-center m-4" title="Logout">
 						<div className="px-2 py-1">
 							<img src={logoutIcn} alt="logout" className="inline w-5  h-5 " />
@@ -83,7 +83,7 @@ export const Layout = ({ children }) => {
 						<TextContent title="Logout" fontSize="12px" className="text-black ml-4" />
 					</Link>
 				</div>
-				<div>
+				<div className="mt-4">
 					<Link to className=" flex items-center bg-mez-blue m-1 rounded-lg" title="Accept Payments">
 						<div className="p-2 rounded-full">
 							<img src={acceptPayIcn} alt="Accept Payments" className="inline w-5  h-5 " />
@@ -108,7 +108,7 @@ export const Layout = ({ children }) => {
 					</div>
 				</div>
 				<div className="w-full">
-					<div className="rounded-lg bg-write-white mx-2 my-1" style={{ minHeight: "85vh" }}>
+					<div className="rounded-lg bg-write-white mx-2 my-1 px-8 py-10" style={{ minHeight: "85vh" }}>
 						{children}
 					</div>
 				</div>
