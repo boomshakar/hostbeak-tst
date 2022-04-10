@@ -38,7 +38,7 @@ const FormInput = ({ row, name, label, placeholder, type, required }) => (
 	</>
 );
 
-export const TextContent = ({ title, className, block, fontFamily = "poppins", fontWeight, fontSize }) => (
+const TextContent = ({ title, className, block, fontFamily = "poppins", fontWeight, fontSize }) => (
 	<span style={{ fontSize, fontFamily, fontWeight, display: block && "block" }} className={className}>
 		{title}
 	</span>
