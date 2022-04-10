@@ -12,6 +12,7 @@ module.exports = {
 				"write-text3": "#c4c4c4",
 				"write-text4": "#667085",
 				"write-text5": "#304156",
+				"write-text6": "#8c8c8c",
 				"write-text1-fade": "rgba(130, 134, 154, 0.5);",
 				"main-bg": "#e5e5e5",
 			},

@@ -20,24 +20,55 @@ import acceptPayIcn from "../assets/acceptpayment--icon.svg";
 import notifyIcn from "../assets/notification--icon.svg";
 import userArrowDown from "../assets/user-arrow-down.svg";
 import userImg from "../assets/user-picture.svg";
+import openLink from "../assets/open-link-icon.svg";
+import closeLink from "../assets/close-link-icon.svg";
 
-const NavLinkList = ({ href, src, title }) => {
+const NavLinkList = ({ href, src, title, children }) => {
 	const { pathname } = useLocation();
+	const ACTIVE = href === pathname;
 	return (
-		<Link to={href} className="group flex items-center mb-2" title={title}>
-			<div
-				className={`p-2 ${
-					href === pathname ? "bg-mez-blue rounded-full" : "group-hover:bg-mez-blue group-hover:rounded-full"
-				}`}
-			>
-				<img src={src} alt={title} className="inline w-5  h-5 " />
-			</div>
-			<TextContent
-				title={title}
-				fontSize="12px"
-				className={`text-write-text3 ml-4 ${href === pathname ? "text-black" : "group-hover:text-black"}`}
-			/>
-		</Link>
+		<>
+			<Link to={href} className=" flex items-center justify-between mb-2" title={title}>
+				<div className="group flex items-center">
+					<div
+						className={`p-2 ${
+							ACTIVE ? "bg-mez-blue rounded-full" : "group-hover:bg-mez-blue group-hover:rounded-full"
+						}`}
+					>
+						<img src={src} alt={title} className="inline w-5  h-5 " />
+					</div>
+					<TextContent
+						title={title}
+						fontSize="12px"
+						className={`text-write-text3 ml-4 ${ACTIVE ? "text-black" : "group-hover:text-black"}`}
+					/>
+				</div>
+
+				<div className="px-2 py-1">
+					<img src={ACTIVE ? openLink : closeLink} alt="" className="inline " />
+				</div>
+			</Link>
+			{ACTIVE && children}
+		</>
+	);
+};
+
+const NavLinkChildren = ({ href, title }) => {
+	const { pathname } = useLocation();
+	const ACTIVE = href === pathname;
+
+	return (
+		<div className="flex flex-col w-8/12 ml-auto">
+			<Link to={href}>
+				<TextContent
+					className={`${ACTIVE ? "text-audeo-blue" : "text-write-text6"}`}
+					title={title}
+					fontWeight="400"
+					fontFamily="Roboto"
+					fontSize="12px"
+				/>
+			</Link>
+		</div>
 	);
 };
 export const Layout = ({ children }) => {
@@ -66,17 +97,30 @@ export const Layout = ({ children }) => {
 					<NavLinkList src={welcomeLink} title="Welcome" href />
 					<NavLinkList src={dashboardIcn} title="Dashboard" href />
 					<NavLinkList src={salesIcn} title="Sales" href />
-					<NavLinkList src={purchaseIcn} title="Purchases" href="/add-bill" />
+					<NavLinkList src={purchaseIcn} title="Purchases" href="/add-bill">
+						<NavLinkChildren href="/add-bill" title="Bills" />
+						<NavLinkChildren href title="Vendor" />
+						<NavLinkChildren href title="Products & Services" />
+					</NavLinkList>
 					<NavLinkList src={accountingIcn} title="Accounting" href />
 					<NavLinkList src={bankingIcn} title="Banking" href />
 					<NavLinkList src={payrollIcn} title="Payroll" href />
 					<NavLinkList src={reportIcn} title="Reports" href />
-					<NavLinkList src={analyticIcn} title="Analytics" href="/view-report" />
+					<NavLinkList src={analyticIcn} title="Analytics" href="/view-report">
+						<NavLinkChildren href="/view-report" title="View Report" />
+						<NavLinkChildren href title="To-Do" />
+						<NavLinkChildren href title="Upload Docs" />
+						<NavLinkChildren href title="Chat" />
+						<NavLinkChildren href title="Schedule" />
+						<NavLinkChildren href title="Message Board" />
+						<NavLinkChildren href title="Make Payments" />
+						<NavLinkChildren href title="Billing" />
+					</NavLinkList>
 					<NavLinkList src={settingsIcn} title="Settings" href />
 					{/* </div> */}
 				</div>
 				<div className="border-b border-write-text1-fade">
-					<Link to className="group flex items-center m-4" title="Logout">
+					<Link to className="group flex items-center justify-between m-4" title="Logout">
 						<div className="px-2 py-1">
 							<img src={logoutIcn} alt="logout" className="inline w-5  h-5 " />
 						</div>
