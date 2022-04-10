@@ -71,7 +71,7 @@ export const Layout = ({ children }) => {
 					<NavLinkList src={bankingIcn} title="Banking" href />
 					<NavLinkList src={payrollIcn} title="Payroll" href />
 					<NavLinkList src={reportIcn} title="Reports" href />
-					<NavLinkList src={analyticIcn} title="Analytics" href />
+					<NavLinkList src={analyticIcn} title="Analytics" href="/view-report" />
 					<NavLinkList src={settingsIcn} title="Settings" href />
 					{/* </div> */}
 				</div>
