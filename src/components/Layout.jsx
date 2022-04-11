@@ -3,8 +3,6 @@ import rightArrow from "../assets/arrow-right-icon.svg";
 import TextContent from "./TextContent";
 import { Link, useLocation } from "react-router-dom";
 
-import { routes } from "./navigation/routes";
-
 import welcomeLink from "../assets/welcome-link.svg";
 import dashboardIcn from "../assets/dashboard-icon.svg";
 import salesIcn from "../assets/wallet-icon.svg";
@@ -71,7 +69,7 @@ const NavLinkChildren = ({ href, title }) => {
 		</div>
 	);
 };
-export const Layout = ({ children }) => {
+export default function Layout({ children }) {
 	return (
 		<div className="flex min-h-screen bg-main-bg pt-4 pb-6">
 			<div className="flex flex-col w-2/12 px-3">
@@ -94,33 +92,33 @@ export const Layout = ({ children }) => {
 				</div>
 				<div className="pt-4 px-4">
 					{/* <div className=""> */}
-					<NavLinkList src={welcomeLink} title="Welcome" href />
-					<NavLinkList src={dashboardIcn} title="Dashboard" href />
-					<NavLinkList src={salesIcn} title="Sales" href />
+					<NavLinkList src={welcomeLink} title="Welcome" href="" />
+					<NavLinkList src={dashboardIcn} title="Dashboard" href="" />
+					<NavLinkList src={salesIcn} title="Sales" href="" />
 					<NavLinkList src={purchaseIcn} title="Purchases" href="/add-bill">
 						<NavLinkChildren href="/add-bill" title="Bills" />
-						<NavLinkChildren href title="Vendor" />
-						<NavLinkChildren href title="Products & Services" />
+						<NavLinkChildren href="" title="Vendor" />
+						<NavLinkChildren href="" title="Products & Services" />
 					</NavLinkList>
-					<NavLinkList src={accountingIcn} title="Accounting" href />
-					<NavLinkList src={bankingIcn} title="Banking" href />
-					<NavLinkList src={payrollIcn} title="Payroll" href />
-					<NavLinkList src={reportIcn} title="Reports" href />
+					<NavLinkList src={accountingIcn} title="Accounting" href="" />
+					<NavLinkList src={bankingIcn} title="Banking" href="" />
+					<NavLinkList src={payrollIcn} title="Payroll" href="" />
+					<NavLinkList src={reportIcn} title="Reports" href="" />
 					<NavLinkList src={analyticIcn} title="Analytics" href="/view-report">
 						<NavLinkChildren href="/view-report" title="View Report" />
-						<NavLinkChildren href title="To-Do" />
-						<NavLinkChildren href title="Upload Docs" />
-						<NavLinkChildren href title="Chat" />
-						<NavLinkChildren href title="Schedule" />
-						<NavLinkChildren href title="Message Board" />
-						<NavLinkChildren href title="Make Payments" />
-						<NavLinkChildren href title="Billing" />
+						<NavLinkChildren href="" title="To-Do" />
+						<NavLinkChildren href="" title="Upload Docs" />
+						<NavLinkChildren href="" title="Chat" />
+						<NavLinkChildren href="" title="Schedule" />
+						<NavLinkChildren href="" title="Message Board" />
+						<NavLinkChildren href="" title="Make Payments" />
+						<NavLinkChildren href="" title="Billing" />
 					</NavLinkList>
-					<NavLinkList src={settingsIcn} title="Settings" href />
+					<NavLinkList src={settingsIcn} title="Settings" href="" />
 					{/* </div> */}
 				</div>
 				<div className="border-b border-write-text1-fade">
-					<Link to className="group flex items-center justify-between m-4" title="Logout">
+					<Link to="" className="group flex items-center justify-between m-4" title="Logout">
 						<div className="px-2 py-1">
 							<img src={logoutIcn} alt="logout" className="inline w-5  h-5 " />
 						</div>
@@ -128,7 +126,7 @@ export const Layout = ({ children }) => {
 					</Link>
 				</div>
 				<div className="mt-4">
-					<Link to className=" flex items-center bg-mez-blue m-1 rounded-lg" title="Accept Payments">
+					<Link to="" className=" flex items-center bg-mez-blue m-1 rounded-lg" title="Accept Payments">
 						<div className="p-2 rounded-full">
 							<img src={acceptPayIcn} alt="Accept Payments" className="inline w-5  h-5 " />
 						</div>
@@ -159,4 +157,4 @@ export const Layout = ({ children }) => {
 			</div>
 		</div>
 	);
-};
+}

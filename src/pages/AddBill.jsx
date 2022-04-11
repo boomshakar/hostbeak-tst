@@ -1,11 +1,6 @@
 import TextContent from "../components/TextContent";
-// import { Button, FormControl, Select as MSelect, MenuItem, InputLabel } from "@mui/material";
-// import { FileUploadOutlined } from "@mui/icons-material";
-import { DatePicker, Select, Input, Upload, message, Button, Table, Tag, Space } from "antd";
+import { DatePicker, Select, Input, Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import moment from "moment";
-
-import UploadIcon from "../assets/Upload Icon.svg";
 import TrashcanIcn from "../assets/trash-delete-bin 1.svg";
 import EditIcn from "../assets/edit-write-alt 1.svg";
 
@@ -119,7 +114,7 @@ const AddBillTabe = () => {
 		</>
 	);
 };
-export const AddBill = () => {
+const AddBill = () => {
 	return (
 		<div>
 			<div>
@@ -134,11 +129,11 @@ export const AddBill = () => {
 						</Select>
 					</div>
 					<div className="w-1/3">
-						<TextContent title="Date" block />
+						<TextContent title="Date" fontFamily="Inter" fontWeight="500" block />
 						<DatePicker placeholder="2015-06-06" style={{ width: 200 }} />
 					</div>
 					<div className="w-1/3">
-						<TextContent title="Bill #" block />
+						<TextContent title="Bill #" fontFamily="Inter" fontWeight="500" block />
 						<TextArea
 							// value={value}
 							// onChange={this.onChange}
@@ -155,7 +150,7 @@ export const AddBill = () => {
 					<div className="flex flex-col w-2/3">
 						<div className="flex my-2">
 							<div className="w-1/2">
-								<TextContent title="Currency" block />
+								<TextContent title="Currency" fontFamily="Inter" fontWeight="500" block />
 								<Select style={{ width: 200 }} placeholder="USD - US Dolar" onChange={() => {}}>
 									<Option value="Garri">Garri</Option>
 									<Option value="Semo">Semo</Option>
@@ -163,13 +158,13 @@ export const AddBill = () => {
 								</Select>
 							</div>
 							<div className="w-1/2">
-								<TextContent title="Due Date" block />
+								<TextContent title="Due Date" fontFamily="Inter" fontWeight="500" block />
 								<DatePicker placeholder="2015-06-06" style={{ width: 200 }} />
 							</div>
 						</div>
 						<div className="flex my-2">
 							<div className="w-1/2">
-								<TextContent title="Upload Copy of Bill" block />
+								<TextContent title="Upload Copy of Bill" fontFamily="Inter" fontWeight="500" block />
 								<Upload>
 									<Button className="flex items-center justify-between" style={{ width: 200 }}>
 										<span className="text-write-text3">Upload File</span>{" "}
@@ -178,7 +173,7 @@ export const AddBill = () => {
 								</Upload>
 							</div>
 							<div className="w-1/2">
-								<TextContent title="P.O / S.O" block />
+								<TextContent title="P.O / S.O" fontFamily="Inter" fontWeight="500" block />
 								<TextArea
 									// value={value}
 									// onChange={this.onChange}
@@ -193,7 +188,7 @@ export const AddBill = () => {
 						</div>
 					</div>
 					<div className="w-1/3 my-2">
-						<TextContent title="P.O / S.O" block />
+						<TextContent title="Notes" fontFamily="Inter" fontWeight="500" block />
 						<TextArea
 							// value={value}
 							// onChange={this.onChange}
@@ -208,7 +203,7 @@ export const AddBill = () => {
 				</div>
 				<AddBillTabe />
 				<div className="flex justify-end m-4">
-					<button onClink={() => {}} className="border border-write-text1 rounded-md py-3 px-6 text-write-text1 m-1">
+					<button onClick={() => {}} className="border border-write-text1 rounded-md py-3 px-6 text-write-text1 m-1">
 						Cancel
 					</button>
 					<button type="submit" className="border rounded-md py-3 px-6 bg-light-blue text-write-white m-1">
@@ -219,3 +214,5 @@ export const AddBill = () => {
 		</div>
 	);
 };
+
+export default AddBill;

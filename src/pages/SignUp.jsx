@@ -1,10 +1,7 @@
-import bgImage from "../assets/signup_image 2.svg";
-import { FormLayoutDemo } from "../components/Form";
-import { Typography, Divider, Text } from "antd";
+import { useHistory } from "react-router-dom";
+import { routes } from "../components/navigation/routes";
+import { Divider } from "antd";
 
-// import "../styles/signUp.scss";
-
-const { Title } = Typography;
 const FormInput = ({ row, name, label, placeholder, type, required }) => (
 	<>
 		{type !== "checkbox" ? (
@@ -44,7 +41,8 @@ const TextContent = ({ title, className, block, fontFamily = "poppins", fontWeig
 	</span>
 );
 
-export const SignUp = () => {
+const SignUp = () => {
+	const history = useHistory();
 	return (
 		<div className="flex flex-wrap h-screen">
 			<div className="md:w-1/2">
@@ -86,7 +84,13 @@ export const SignUp = () => {
 						</button>
 					</div>
 					<div className="flex justify-center">
-						<button type="submit" className="w-9/12 bg-light-blue rounded-lg p-4 text-write-white text-lg text-center">
+						<button
+							onClick={(e) => {
+								e.preventDefault();
+								history.push(routes.addBill);
+							}}
+							className="w-9/12 bg-light-blue rounded-lg p-4 text-write-white text-lg text-center"
+						>
 							Sign up
 						</button>
 					</div>
@@ -103,3 +107,5 @@ export const SignUp = () => {
 		</div>
 	);
 };
+
+export default SignUp;

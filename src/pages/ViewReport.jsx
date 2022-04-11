@@ -1,13 +1,11 @@
-import { Table, Radio, Divider } from "antd";
-import { useState } from "react";
+import { Table } from "antd";
 import TextContent from "../components/TextContent";
 
 import NewTag from "../assets/new-tag.svg";
 import MessageIcn from "../assets/message-icon.svg";
 import "../styles/viewReport.scss";
 
-export const ViewReport = () => {
-	const [selectionType, setSelectionType] = useState("checkbox");
+const ViewReport = () => {
 	const columns = [
 		{
 			title: "Name",
@@ -121,3 +119,5 @@ export const ViewReport = () => {
 		</div>
 	);
 };
+
+export default ViewReport;
